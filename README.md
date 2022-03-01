@@ -1,5 +1,5 @@
 # Implementation of FULL ADDER Using 28 MOS Transistors and 28nm CMOS Technology
-FULL ADDER (one bit) is designed using 28nm CMOS technology by using Synopsys Custom Compiler.
+FULL ADDER (for 15-4 Compressor) is designed using 28nm CMOS technology by using Synopsys Custom Compiler.
 
 
 # Table of Content 
