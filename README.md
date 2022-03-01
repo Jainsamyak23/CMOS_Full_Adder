@@ -1,12 +1,12 @@
-# Implementation of XNOR Using 6 MOS Transistors and 28nm CMOS Technology
-XNOR gate (One Bit Equality Comparator) is designed using 28nm CMOS technology by using Synopsys Custom Compiler
+# Implementation of FULL ADDER Using 28 MOS Transistors and 28nm CMOS Technology
+FULL ADDER (one bit) is designed using 28nm CMOS technology by using Synopsys Custom Compiler.
 
 
 # Table of Content 
 - ABSTRACT 
 - INTRODUCTION
 - TOOLS USED
-- XNOR CIRCUIT DESIGN
+- CMOS FULL ADDER
 - NETLIST
 - ACKNOWLEDGEMENT 
 - REFERENCE 
@@ -14,15 +14,21 @@ XNOR gate (One Bit Equality Comparator) is designed using 28nm CMOS technology b
 
 ## ABSTRACT
 
-XNOR is a Hybrid gate which has OR, AND and NOT operation done to the inputs. XNOR gate is also called as equivalance gate because of the operation gives logic high when inputs are same and logic low when inputs are opposite. This is also the reason why XNOR is used as one bit equality comparator. XNOR is used for various applications like Pseudo Random number generator, Equality comparator, Correlation and sequence detection etc. Here a XNOR is designed using 28nm CMOS technology by using Synopsys Custom Compiler.
+Static CMOS logic is a traditional logic family known for ease of design, a good noise margins, low power dissipation, and robustness of the circuit. The performance of 
+the adder circuits and compressors is based on TMSC 28nm CMOS process models at the supply of 1v, 500Mhz frequency evaluated by the comparing of simulation results 
+obtained from different software. 
 
 # INTRODUCTION
 
-In the Figure below, we have achieved XNOR operation only by using 3 NMOS and 3 PMOS transistors. The circuit consists of 2 CMOS inverters and 2 MOS pass gate configuration. By clever logic hack we have achieved XNOR logic using less number of transistors.
+It is based on NPCMOS logic style. Any gate in this design method consists of complementary logic networks composed of PMOS for pull-up and NMOS devices for 
+pull-down. The design guarantees the output node moves to and fro between the positive rail and ground so that the static power dissipation of the circuit is negligible. 
+PMOS devices will be „ON‟, if input is „logic0‟ and NMOS devices will be „ON‟, if input is „logic1‟
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/xnor.png)
 
-When both the inputs given are same, we get logic high as output indicating us that both the inputs are of same logic. When both inputs are of different logics, we get a logic low.
+
+This adder cell uses 28 transistor based on regular CMOS structure (pull-up and pull-down networks). Complementary transistor pairs make the circuit layout straight forward. 
+CMOS generates carry through a static gate .The advantage of using CMOS is that it has layout regularity, high noise margins and stability at low voltage due to complementary 
+transistor pair and smaller number of interconnecting wires 
 
 # TOOL USED
 
@@ -32,36 +38,31 @@ When both the inputs given are same, we get logic high as output indicating us t
 
 - Synopsys 28nm PDK:  The Synopsys 28nm Process Design Kit(PDK) was used in creation and simulation of the above designed circuit.
 
-# XNOR CIRCUIT DESIGN
+# CMOS FULL ADDER CIRCUIT DESIGN
 
-The CMOS design for XNOR is shown in fig. 
+The CMOS design for FULL ADDER is shown in fig. 
+![IMAGE](https://github.com/Jainsamyak23/CMOS_Full_Adder/blob/main/Images/CMOS%20FULL%20ADDER.png)
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/circuit.png)
 
 - SCHEMATIC
-
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/schematic.png)
+![IMAGE](https://github.com/Jainsamyak23/CMOS_Full_Adder/blob/main/Images/samyak_schematicjpg.jpg)
 
                                                                                                                                                                                                                                                                                                                                                                             
 - SYMBOL
-
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/symbol.png)                                                                                                                                                                                                                                                                                                                                                                               
+![IMAGE](https://github.com/Jainsamyak23/CMOS_Full_Adder/blob/main/Images/samyak_symbol.jpg)                                                                                                                                                                                                                                                                                                                                                                            
 
 - TESTBENCH SYMBOL
-
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/sim_schem.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+![IMAGE](https://github.com/Jainsamyak23/CMOS_Full_Adder/blob/main/Images/samyak_testbench.jpg)                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 - PRIMEWAVE WINDOW
-
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/testsuit_pathway.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+![IMAGE](https://github.com/Jainsamyak23/CMOS_Full_Adder/blob/main/Images/samyak_primewave.jpg)                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 - TESTBENCH WAVEFORM
-
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/waveform.png)                                            
+![IMAGE](https://github.com/Jainsamyak23/CMOS_Full_Adder/blob/main/Images/samyak_waveform.jpg)                                          
 
 # NETLIST
-The netlist of the above circuit has also been uploaded to the github repo with the file name - netlist.txt  
+The netlist of the above circuit has also been uploaded to the github repo  - (https://github.com/Jainsamyak23/CMOS_Full_Adder/blob/main/netlist.txt)
 
 # AUTHOR
-P R RAHUL HEBBAR, MTech VLSI and Embedded Systems , Defence Institute of Advanced Technology, Pune, Maharashtra
+SAMYAK JAIN, MTech VLSI and Embedded Systems , Defence Institute of Advanced Technology, Pune, Maharashtra
 
 # ACKNOWLEDGEMENT 
 
@@ -74,8 +75,12 @@ P R RAHUL HEBBAR, MTech VLSI and Embedded Systems , Defence Institute of Advance
 - Chinmay panda, IIT Hyderabad
 
 # REFERENCES
+[1] J. Uyemura, “CMOS Logic Circuit Design”, ISBN 0-7923- 8452-0, 
+Kluwer, 1999
 
-- Cristiano Calligaro,(2008) Design of a rad-hard library of digital cells
-for space applications.
-- Fig 1. Courtesy of electronics-tutorial.net, https://www.electronics-tutorial.net/digital-logic-gates/xnor-gate/
+[2] J. M. Rabaey, A. Chandrakasan, B. Nikolic, “Digital Integrated 
+Circuits- A Design Perspective”, 2nd Prentice Hall, Englewood Cliffs, 
+NJ, 2002.
+
+
 
